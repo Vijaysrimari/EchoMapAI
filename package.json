@@ -1,29 +1,15 @@
 {
   "name": "echomap-ai",
   "version": "1.0.0",
-  "main": "index.ts",
-  "dependencies": {
-    "@expo/vector-icons": "^15.0.2",
-    "@react-navigation/bottom-tabs": "^7.19.1",
-    "@react-navigation/native": "^7.4.1",
-    "@react-navigation/native-stack": "^7.19.1",
-    "expo": "~57.0.23",
-    "expo-status-bar": "~57.0.1",
-    "react": "19.2.3",
-    "react-native": "0.86.3",
-    "react-native-safe-area-context": "~5.7.0",
-    "react-native-screens": "~4.26.0"
-  },
-  "devDependencies": {
-    "@types/react": "~19.2.2",
-    "typescript": "~6.0.3"
-  },
+  "main": "web-dashboard/src/main.tsx",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "typecheck": "tsc --noEmit"
+    "start": "npm --prefix web-dashboard run dev -- --host 127.0.0.1 --port 5173",
+    "web": "npm --prefix web-dashboard run dev -- --host 127.0.0.1 --port 5173",
+    "build": "npm --prefix web-dashboard run build",
+    "preview": "npm --prefix web-dashboard run preview -- --host 127.0.0.1 --port 5173",
+    "backend": "cd backend && .\\.venv\\Scripts\\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000"
   },
   "private": true
 }
